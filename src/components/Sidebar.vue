@@ -1,7 +1,7 @@
 <template>
   <aside class="sidebar">
     <div class="sidebar-header">
-      <h2>Decathlon</h2>
+      <h2>Decathlon Fast-Forward Sidebar</h2>
     </div>
     <nav class="sidebar-nav">
       <ul>

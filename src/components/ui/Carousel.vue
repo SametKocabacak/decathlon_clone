@@ -68,6 +68,10 @@ export default {
       type: Array,
       required: true,
     },
+    title: {
+      type: String,
+      default: '',
+    },
     buttonText: {
       type: String,
       default: 'Keşfet!',

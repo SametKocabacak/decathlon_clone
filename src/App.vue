@@ -30,6 +30,7 @@
         </div>
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -38,7 +39,7 @@ import { defineComponent, inject, ref, computed } from 'vue'
 import Header from './components/header/Header.vue'
 import Sidebar from './components/Sidebar.vue'
 import Home from './components/Home.vue'
-
+import Footer from './components/Footer.vue'
 
 export default defineComponent({
   name: 'App',
@@ -46,6 +47,7 @@ export default defineComponent({
     Header,
     Sidebar,
     Home,
+    Footer,
   },
   setup() {
     const pageData = inject('pageData')
@@ -126,14 +128,13 @@ body {
 .app-wrapper {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
 .app-container {
   display: flex;
   flex: 1;
-  overflow: hidden;
+  min-height: 0;
 }
 
 .content-area {
@@ -141,6 +142,7 @@ body {
   overflow-y: auto;
   background-color: #f5f5f5;
   padding: 2rem;
+  min-width: 0;
 }
 
 .page-section {
