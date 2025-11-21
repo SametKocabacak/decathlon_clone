@@ -53,6 +53,15 @@
       @product-click="handleGrid3ProductClick"
     />
     
+    <div class="promotional-banner">
+      <img src="/j1.png" alt="Maximum Kart Kampanyası" class="banner-image" />
+    </div>
+    
+    <Brands 
+      :brands="brands"
+      @brand-click="handleBrandClick"
+    />
+    
     <section class="featured-products">
       <h2>Öne Çıkan Ürünler</h2>
       <Grid>
@@ -77,6 +86,7 @@ import OpportunityProducts from './ui/OpportunityProducts.vue'
 import PopularCategories from './ui/PopularCategories.vue'
 import ProductGridWithBanner from './ui/ProductGridWithBanner.vue'
 import ProductGridWithBannerRight from './ui/ProductGridWithBannerRight.vue'
+import Brands from './ui/Brands.vue'
 
 export default {
   name: 'Home',
@@ -89,6 +99,7 @@ export default {
     PopularCategories,
     ProductGridWithBanner,
     ProductGridWithBannerRight,
+    Brands,
   },
   props: {
     title: {
@@ -452,12 +463,12 @@ export default {
       // Handle grid 2 product click
     }
 
-    const grid3BannerImage = '/gridview3/big3.jpg'
+    const grid3BannerImage = '/assets/gridview3/big3.jpg'
 
     const grid3Products = [
       {
         id: 1,
-        image: '/gridview3/h1.png',
+        image: '/assets/gridview3/h1.png',
         hasDiscount: false,
         discountedPrice: '₺2.190',
         originalPrice: null,
@@ -471,7 +482,7 @@ export default {
       },
       {
         id: 2,
-        image: '/gridview3/h2.png',
+        image: '/assets/gridview3/h2.png',
         hasDiscount: true,
         discountedPrice: '₺18.990',
         originalPrice: '₺24.990',
@@ -485,7 +496,7 @@ export default {
       },
       {
         id: 3,
-        image: '/gridview3/h3.png',
+        image: '/assets/gridview3/h3.png',
         hasDiscount: false,
         discountedPrice: '₺3.790',
         originalPrice: null,
@@ -499,7 +510,7 @@ export default {
       },
       {
         id: 4,
-        image: '/gridview3/h4.png',
+        image: '/assets/gridview3/h4.png',
         hasDiscount: true,
         discountedPrice: '₺9.990',
         originalPrice: '₺11.990',
@@ -513,7 +524,7 @@ export default {
       },
       {
         id: 5,
-        image: '/gridview3/h5.png',
+        image: '/assets/gridview3/h5.png',
         hasDiscount: false,
         discountedPrice: '₺2.690',
         originalPrice: null,
@@ -527,7 +538,7 @@ export default {
       },
       {
         id: 6,
-        image: '/gridview3/h6.png',
+        image: '/assets/gridview3/h6.png',
         hasDiscount: true,
         discountedPrice: '₺36.990',
         originalPrice: '₺49.990',
@@ -550,6 +561,44 @@ export default {
       // Handle grid 3 product click
     }
 
+    const brands = [
+      {
+        id: 1,
+        name: 'QUECHUA',
+        image: '/assets/brands/k1.png',
+      },
+      {
+        id: 2,
+        name: 'DOMYOS',
+        image: '/assets/brands/k2.png',
+      },
+      {
+        id: 3,
+        name: 'SOLOGNAC',
+        image: '/assets/brands/k3.png',
+      },
+      {
+        id: 4,
+        name: 'KALENJI',
+        image: '/assets/brands/k4.png',
+      },
+      {
+        id: 5,
+        name: 'ARTENGO',
+        image: '/assets/brands/k5.png',
+      },
+      {
+        id: 6,
+        name: 'KIPSTA',
+        image: '/assets/brands/k6.png',
+      },
+    ]
+
+    const handleBrandClick = (brand) => {
+      console.log('Brand clicked:', brand)
+      // Handle brand click
+    }
+
     return {
       carouselImages,
       discountCategories,
@@ -561,6 +610,7 @@ export default {
       grid2Products,
       grid3BannerImage,
       grid3Products,
+      brands,
       handleDiscover,
       handleDiscountCategoryClick,
       handleNavClick,
@@ -572,6 +622,7 @@ export default {
       handleGrid2ProductClick,
       handleGrid3BannerClick,
       handleGrid3ProductClick,
+      handleBrandClick,
     }
   },
 }
