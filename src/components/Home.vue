@@ -62,18 +62,9 @@
       @brand-click="handleBrandClick"
     />
     
-    <section class="featured-products">
-      <h2>Öne Çıkan Ürünler</h2>
-      <Grid>
-        <ProductCard
-          v-for="product in featuredProducts"
-          :key="product.id"
-          :name="product.name"
-          :price="product.price"
-          :image="product.image"
-        />
-      </Grid>
-    </section>
+    <InfoCards 
+      :cards="infoCards"
+    />
   </div>
 </template>
 
@@ -87,6 +78,7 @@ import PopularCategories from './ui/PopularCategories.vue'
 import ProductGridWithBanner from './ui/ProductGridWithBanner.vue'
 import ProductGridWithBannerRight from './ui/ProductGridWithBannerRight.vue'
 import Brands from './ui/Brands.vue'
+import InfoCards from './ui/InfoCards.vue'
 
 export default {
   name: 'Home',
@@ -100,6 +92,7 @@ export default {
     ProductGridWithBanner,
     ProductGridWithBannerRight,
     Brands,
+    InfoCards,
   },
   props: {
     title: {
@@ -599,6 +592,29 @@ export default {
       // Handle brand click
     }
 
+    const infoCards = [
+      {
+        icon: '/assets/infocards/o1.png',
+        title: '6500 ₺ Üzeri Kargo Bedava',
+        description: '6500 TL üzeri siparişlerinizde kargo bedava',
+      },
+      {
+        icon: '/assets/infocards/o2.png',
+        title: 'Kredi Kartı İle Ödeme',
+        description: 'Taksitli ödeme kolaylığıyla alışveriş yapabilirsiniz',
+      },
+      {
+        icon: '/assets/infocards/o3.png',
+        title: 'Mağazadan Ücretsiz Teslimat',
+        description: 'Siparişlerinizi seçtiğiniz mağazadan teslim alabilirsiniz!',
+      },
+      {
+        icon: '/assets/infocards/o4.png',
+        title: 'Mağazadan Aynı Gün Teslimat',
+        description: 'Mağazadan teslim alacağınız siparişlerinizi aynı gün teslim alabilirsiniz',
+      },
+    ]
+
     return {
       carouselImages,
       discountCategories,
@@ -611,6 +627,7 @@ export default {
       grid3BannerImage,
       grid3Products,
       brands,
+      infoCards,
       handleDiscover,
       handleDiscountCategoryClick,
       handleNavClick,

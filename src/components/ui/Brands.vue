@@ -46,6 +46,7 @@ export default {
 
 .brand-card {
   background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
   border-radius: 4px;
   padding: 1.5rem;
   display: flex;
