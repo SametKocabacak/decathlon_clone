@@ -70,10 +70,10 @@ export default {
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #1a1a1a;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
   margin-bottom: 2.5rem;
   letter-spacing: 0.05em;

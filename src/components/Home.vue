@@ -17,6 +17,15 @@
       @product-click="handleOpportunityProductClick"
     />
     
+    <PopularCategories 
+      :categories="popularCategories"
+      @category-click="handlePopularCategoryClick"
+    />
+    
+    <div class="promotional-banner">
+      <img src="/assets/e1.png" alt="Garmin ürünlerini keşfet!" class="banner-image" />
+    </div>
+    
     <section class="featured-products">
       <h2>Öne Çıkan Ürünler</h2>
       <Grid>
@@ -38,6 +47,7 @@ import ProductCard from './ui/ProductCard.vue'
 import Carousel from './ui/Carousel.vue'
 import DiscountCategories from './ui/DiscountCategories.vue'
 import OpportunityProducts from './ui/OpportunityProducts.vue'
+import PopularCategories from './ui/PopularCategories.vue'
 
 export default {
   name: 'Home',
@@ -47,6 +57,7 @@ export default {
     Carousel,
     DiscountCategories,
     OpportunityProducts,
+    PopularCategories,
   },
   props: {
     title: {
@@ -176,14 +187,54 @@ export default {
       // Handle opportunity product click
     }
 
+    const popularCategories = [
+      {
+        id: 1,
+        name: 'MONTLAR',
+        image: '/assets/popularcategories/d1.jpg',
+      },
+      {
+        id: 2,
+        name: 'PANTOLONLAR',
+        image: '/assets/popularcategories/d2.jpg',
+      },
+      {
+        id: 3,
+        name: 'POLARLAR',
+        image: '/assets/popularcategories/d3.jpg',
+      },
+      {
+        id: 4,
+        name: 'YAĞMUR ÜRÜNLERİ',
+        image: '/assets/popularcategories/d4.jpg',
+      },
+      {
+        id: 5,
+        name: 'TOPLAR',
+        image: '/assets/popularcategories/d5.jpg',
+      },
+      {
+        id: 6,
+        name: 'TERMOSLAR & MATARALAR',
+        image: '/assets/popularcategories/d6.jpg',
+      },
+    ]
+
+    const handlePopularCategoryClick = (category) => {
+      console.log('Popular category clicked:', category)
+      // Handle popular category click
+    }
+
     return {
       carouselImages,
       discountCategories,
       opportunityProducts,
+      popularCategories,
       handleDiscover,
       handleDiscountCategoryClick,
       handleNavClick,
       handleOpportunityProductClick,
+      handlePopularCategoryClick,
     }
   },
 }
@@ -193,6 +244,18 @@ export default {
 .home {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.promotional-banner {
+  margin: 3rem 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .featured-products {
