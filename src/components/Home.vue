@@ -12,6 +12,11 @@
       @nav-click="handleNavClick"
     />
     
+    <OpportunityProducts 
+      :products="opportunityProducts"
+      @product-click="handleOpportunityProductClick"
+    />
+    
     <section class="featured-products">
       <h2>Öne Çıkan Ürünler</h2>
       <Grid>
@@ -32,6 +37,7 @@ import Grid from './ui/Grid.vue'
 import ProductCard from './ui/ProductCard.vue'
 import Carousel from './ui/Carousel.vue'
 import DiscountCategories from './ui/DiscountCategories.vue'
+import OpportunityProducts from './ui/OpportunityProducts.vue'
 
 export default {
   name: 'Home',
@@ -40,6 +46,7 @@ export default {
     ProductCard,
     Carousel,
     DiscountCategories,
+    OpportunityProducts,
   },
   props: {
     title: {
@@ -113,12 +120,70 @@ export default {
       // Handle navigation item click
     }
 
+    const opportunityProducts = [
+      {
+        id: 1,
+        image: '/assets/productimg/c1.png',
+        discountedPrice: '₺850',
+        originalPrice: '₺950',
+        discountPercentage: '-10%',
+        dateRange: '*03.11.2025 - 01.12.2025 arası',
+        brand: 'QUECHUA',
+        description: 'Katlanır Kamp Sandalyesi',
+        rating: 4,
+        reviewCount: 12978,
+      },
+      {
+        id: 2,
+        image: '/assets/productimg/c2.png',
+        discountedPrice: '₺1.040',
+        originalPrice: '₺1.490',
+        discountPercentage: '-30%',
+        dateRange: '*03.11.2025 - 01.12.2025 arası',
+        brand: 'QUECHUA',
+        description: 'Çocuk Outdoor Ayakkabı - Gri - NH500',
+        rating: 5,
+        reviewCount: 306,
+      },
+      {
+        id: 3,
+        image: '/assets/productimg/c3.png',
+        discountedPrice: '₺1.990',
+        originalPrice: '₺2.990',
+        discountPercentage: '-33%',
+        dateRange: '*03.11.2025 - 01.12.2025 arası',
+        brand: 'QUECHUA',
+        description: 'Katlanabilir Soğutucu - 25 Litre - 15 Saat Serin Tutma - 500 Fresh',
+        rating: 5,
+        reviewCount: 1039,
+      },
+      {
+        id: 4,
+        image: '/assets/productimg/c4.png',
+        discountedPrice: '₺3.790',
+        originalPrice: '₺4.990',
+        discountPercentage: '-24%',
+        dateRange: '*03.11.2025 - 01.12.2025 arası',
+        brand: 'ASICS',
+        description: 'Erkek Tenis Ayakkabısı - Mavi - Asics Gel Challenger 14 1041A470-400',
+        rating: 4.5,
+        reviewCount: 54,
+      },
+    ]
+
+    const handleOpportunityProductClick = (product) => {
+      console.log('Opportunity product clicked:', product)
+      // Handle opportunity product click
+    }
+
     return {
       carouselImages,
       discountCategories,
+      opportunityProducts,
       handleDiscover,
       handleDiscountCategoryClick,
       handleNavClick,
+      handleOpportunityProductClick,
     }
   },
 }
