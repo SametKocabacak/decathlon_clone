@@ -26,6 +26,15 @@
       <img src="/assets/e1.png" alt="Garmin ürünlerini keşfet!" class="banner-image" />
     </div>
     
+    <ProductGridWithBanner
+      :banner-image="gridBannerImage"
+      banner-title="Tekerlekli sporlar"
+      banner-button-text="Incele!"
+      :products="gridProducts"
+      @banner-click="handleGridBannerClick"
+      @product-click="handleGridProductClick"
+    />
+    
     <section class="featured-products">
       <h2>Öne Çıkan Ürünler</h2>
       <Grid>
@@ -48,6 +57,7 @@ import Carousel from './ui/Carousel.vue'
 import DiscountCategories from './ui/DiscountCategories.vue'
 import OpportunityProducts from './ui/OpportunityProducts.vue'
 import PopularCategories from './ui/PopularCategories.vue'
+import ProductGridWithBanner from './ui/ProductGridWithBanner.vue'
 
 export default {
   name: 'Home',
@@ -58,6 +68,7 @@ export default {
     DiscountCategories,
     OpportunityProducts,
     PopularCategories,
+    ProductGridWithBanner,
   },
   props: {
     title: {
@@ -225,16 +236,118 @@ export default {
       // Handle popular category click
     }
 
+    const gridBannerImage = '/assets/gridview1/big1.jpg'
+
+    const gridProducts = [
+      {
+        id: 1,
+        image: '/assets/gridview1/f1.png',
+        hasDiscount: true,
+        discountedPrice: '₺36.990',
+        originalPrice: '₺49.990',
+        discountPercentage: '-26%',
+        dateRange: '*03.11.2025 - 01.12.2025 arası',
+        brand: 'ROCKRIDER',
+        description: 'EXPL 540 29 İNÇ JANT H.DİSK FREN SİYAH DAĞ BİSİKLETİ',
+        rating: 4.5,
+        reviewCount: 419,
+      },
+      {
+        id: 2,
+        image: '/assets/gridview1/f2.png',
+        hasDiscount: false,
+        discountedPrice: '₺2.190',
+        originalPrice: null,
+        discountPercentage: null,
+        dateRange: null,
+        brand: 'OXELO',
+        description: 'ÇOCUK PATEN - YEŞİL - PLAY 5',
+        rating: 5,
+        reviewCount: 2256,
+        delivery: 'Mağazadan Ücretsiz Teslimat',
+      },
+      {
+        id: 3,
+        image: '/assets/gridview1/f3.png',
+        hasDiscount: true,
+        discountedPrice: '₺18.990',
+        originalPrice: '₺24.990',
+        discountPercentage: '-24%',
+        dateRange: '*03.11.2025 - 01.12.2025 arası',
+        brand: 'ROCKRIDER',
+        description: 'ST 120 27,5 İNÇ JANT M.DİSK FREN DAĞ BİSİKLETİ GRİ/TURUNCU',
+        rating: 5,
+        reviewCount: 3486,
+        delivery: 'Mağazadan Ücretsiz Teslimat',
+      },
+      {
+        id: 4,
+        image: '/assets/gridview1/f4.png',
+        hasDiscount: false,
+        discountedPrice: '₺3.790',
+        originalPrice: null,
+        discountPercentage: null,
+        dateRange: null,
+        brand: 'OXELO',
+        description: 'ÇOCUK SCOOTER - SÜSPANSİYON VE GİDONDA FREN - MOR - MID5',
+        rating: 5,
+        reviewCount: 2841,
+        delivery: 'Mağazadan Ücretsiz Teslimat',
+      },
+      {
+        id: 5,
+        image: '/assets/gridview1/f5.png',
+        hasDiscount: true,
+        discountedPrice: '₺9.990',
+        originalPrice: '₺11.990',
+        discountPercentage: '-16%',
+        dateRange: '*03.11.2025 - 01.12.2025 arası',
+        brand: 'BTWIN',
+        description: 'DISCOVER 500 14 İNÇ JANT 3-5 YAŞ SARI 2\'Sİ 1 ARADA ÇOCUK (DENGE)BİSİKLETİ',
+        rating: 5,
+        reviewCount: 998,
+        delivery: 'Mağazadan Ücretsiz Teslimat',
+      },
+      {
+        id: 6,
+        image: '/assets/gridview1/f6.png',
+        hasDiscount: false,
+        discountedPrice: '₺2.690',
+        originalPrice: null,
+        discountPercentage: null,
+        dateRange: null,
+        brand: 'OXELO',
+        description: 'ÇOCUK PATEN - SİYAH / GRİ - FIT3',
+        rating: 5,
+        reviewCount: 7360,
+        delivery: 'Mağazadan Ücretsiz Teslimat',
+      },
+    ]
+
+    const handleGridBannerClick = () => {
+      console.log('Grid banner clicked')
+      // Handle grid banner click
+    }
+
+    const handleGridProductClick = (product) => {
+      console.log('Grid product clicked:', product)
+      // Handle grid product click
+    }
+
     return {
       carouselImages,
       discountCategories,
       opportunityProducts,
       popularCategories,
+      gridBannerImage,
+      gridProducts,
       handleDiscover,
       handleDiscountCategoryClick,
       handleNavClick,
       handleOpportunityProductClick,
       handlePopularCategoryClick,
+      handleGridBannerClick,
+      handleGridProductClick,
     }
   },
 }
