@@ -31,6 +31,15 @@ export default {
       },
       menuItems: [
         { id: 'home', name: 'Ana Sayfa', component: 'Home' },
+        { id: 'carousel', name: 'Carousel', component: 'Home' },
+        { id: 'discount-categories', name: 'İndirim Kategorileri', component: 'Home' },
+        { id: 'opportunity-products', name: 'Fırsat Ürünleri', component: 'Home' },
+        { id: 'popular-categories', name: 'Popüler Kategoriler', component: 'Home' },
+        { id: 'product-grid-1', name: 'Ürün Grid 1', component: 'Home' },
+        { id: 'product-grid-2', name: 'Ürün Grid 2', component: 'Home' },
+        { id: 'product-grid-3', name: 'Ürün Grid 3', component: 'Home' },
+        { id: 'brands', name: 'Markalar', component: 'Home' },
+        { id: 'info-cards', name: 'Bilgi Kartları', component: 'Home' },
       ],
       pages: {
         home: {

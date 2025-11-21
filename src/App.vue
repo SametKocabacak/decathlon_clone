@@ -18,7 +18,7 @@
       />
       <div class="content-area">
         <div 
-          v-for="item in menuItems" 
+          v-for="item in uniqueMenuItems" 
           :key="item.id"
           :id="item.id"
           class="page-section"
@@ -61,14 +61,35 @@ export default defineComponent({
     const headerData = computed(() => pageData?.header || {})
     const menuItems = computed(() => pageData?.menuItems || [])
     const pagesData = computed(() => pageData?.pages || {})
+    
+    // Get unique menu items by component to avoid rendering Home multiple times
+    const uniqueMenuItems = computed(() => {
+      const seen = new Set()
+      return menuItems.value.filter(item => {
+        if (item.component === 'Home') {
+          if (seen.has('Home')) return false
+          seen.add('Home')
+          return item.id === 'home' // Only render the main 'home' item
+        }
+        return true
+      })
+    })
 
     const setCurrentPage = (pageId) => {
       currentPage.value = pageId
-      // Scroll to the section instead of switching pages
-      const element = document.getElementById(pageId)
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }
+      // Scroll to the section - could be a page section or a section within Home
+      setTimeout(() => {
+        const element = document.getElementById(pageId)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        } else {
+          // If not found in page sections, try to find in Home component sections
+          const homeSection = document.querySelector(`#${pageId}`)
+          if (homeSection) {
+            homeSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }
+        }
+      }, 100)
     }
 
     const handleActionClick = (actionId) => {
@@ -100,6 +121,7 @@ export default defineComponent({
     return {
       headerData,
       menuItems,
+      uniqueMenuItems,
       currentPage,
       pagesData,
       activeHeaderMenuItem,

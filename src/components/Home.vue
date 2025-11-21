@@ -1,70 +1,92 @@
 <template>
   <div class="home">
-    <Carousel 
-      :images="carouselImages" 
-      button-text="Keşfet!"
-      @discover-click="handleDiscover"
-    />
+    <section id="carousel" class="home-section">
+      <Carousel 
+        :images="carouselImages" 
+        button-text="Keşfet!"
+        @discover-click="handleDiscover"
+      />
+    </section>
     
-    <DiscountCategories 
-      :categories="discountCategories"
-      @category-click="handleDiscountCategoryClick"
-      @nav-click="handleNavClick"
-    />
+    <section id="discount-categories" class="home-section">
+      <DiscountCategories 
+        :categories="discountCategories"
+        @category-click="handleDiscountCategoryClick"
+        @nav-click="handleNavClick"
+      />
+    </section>
     
-    <OpportunityProducts 
-      :products="opportunityProducts"
-      @product-click="handleOpportunityProductClick"
-    />
+    <section id="opportunity-products" class="home-section">
+      <OpportunityProducts 
+        :products="opportunityProducts"
+        @product-click="handleOpportunityProductClick"
+      />
+    </section>
     
-    <PopularCategories 
-      :categories="popularCategories"
-      @category-click="handlePopularCategoryClick"
-    />
+    <section id="popular-categories" class="home-section">
+      <PopularCategories 
+        :categories="popularCategories"
+        @category-click="handlePopularCategoryClick"
+      />
+    </section>
     
-    <div class="promotional-banner">
-      <img src="/assets/e1.png" alt="Garmin ürünlerini keşfet!" class="banner-image" />
-    </div>
+    <section id="promotional-banner-1" class="home-section">
+      <div class="promotional-banner">
+        <img src="/assets/e1.png" alt="Garmin ürünlerini keşfet!" class="banner-image" />
+      </div>
+    </section>
     
-    <ProductGridWithBanner
-      :banner-image="gridBannerImage"
-      banner-title="Tekerlekli sporlar"
-      banner-button-text="Incele!"
-      :products="gridProducts"
-      @banner-click="handleGridBannerClick"
-      @product-click="handleGridProductClick"
-    />
+    <section id="product-grid-1" class="home-section">
+      <ProductGridWithBanner
+        :banner-image="gridBannerImage"
+        banner-title="Tekerlekli sporlar"
+        banner-button-text="Incele!"
+        :products="gridProducts"
+        @banner-click="handleGridBannerClick"
+        @product-click="handleGridProductClick"
+      />
+    </section>
     
-    <ProductGridWithBannerRight
-      :banner-image="grid2BannerImage"
-      banner-title="Tekerlekli sporlar"
-      banner-button-text="Incele!"
-      :products="grid2Products"
-      @banner-click="handleGrid2BannerClick"
-      @product-click="handleGrid2ProductClick"
-    />
+    <section id="product-grid-2" class="home-section">
+      <ProductGridWithBannerRight
+        :banner-image="grid2BannerImage"
+        banner-title="Tekerlekli sporlar"
+        banner-button-text="Incele!"
+        :products="grid2Products"
+        @banner-click="handleGrid2BannerClick"
+        @product-click="handleGrid2ProductClick"
+      />
+    </section>
     
-    <ProductGridWithBanner
-      :banner-image="grid3BannerImage"
-      banner-title="Tekerlekli sporlar"
-      banner-button-text="Incele!"
-      :products="grid3Products"
-      @banner-click="handleGrid3BannerClick"
-      @product-click="handleGrid3ProductClick"
-    />
+    <section id="product-grid-3" class="home-section">
+      <ProductGridWithBanner
+        :banner-image="grid3BannerImage"
+        banner-title="Tekerlekli sporlar"
+        banner-button-text="Incele!"
+        :products="grid3Products"
+        @banner-click="handleGrid3BannerClick"
+        @product-click="handleGrid3ProductClick"
+      />
+    </section>
     
-    <div class="promotional-banner">
-      <img src="/j1.png" alt="Maximum Kart Kampanyası" class="banner-image" />
-    </div>
+    <section id="promotional-banner-2" class="home-section">
+      <div class="promotional-banner">
+        <img src="/j1.png" alt="Maximum Kart Kampanyası" class="banner-image" />
+      </div>
+    </section>
     
-    <Brands 
-      :brands="brands"
-      @brand-click="handleBrandClick"
-    />
+    <section id="brands" class="home-section">
+      <Brands 
+        :brands="brands"
+        @brand-click="handleBrandClick"
+      />
+    </section>
     
-    <InfoCards 
-      :cards="infoCards"
-    />
+    <section id="info-cards" class="home-section">
+      <InfoCards 
+        :cards="infoCards"
+      />
+    </section>
   </div>
 </template>
 
